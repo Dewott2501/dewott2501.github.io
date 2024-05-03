@@ -1,7 +1,8 @@
 :root{
-    --claro: rgb(196, 219, 245);
-    --fondooscuro: rgb(34, 38, 95);
+    --myViolet: rgb(182,  28, 202);
+    --darkViolet: rgb(99, 10, 110);
     --borde: rgb(26, 71, 119);
+    --bordeV: rgb(60, 119, 26);
     --semioscurooscuro: rgb(178, 218, 255);
     /* --ratBG_: "https://m.gjcdn.net/game-thumbnail/500/892479-qdnvsye7-v4.webp" */
 
@@ -57,7 +58,7 @@ body{
     display: block;
     margin:0px auto;
     box-shadow: 0px 0px 10px blueviolet;
-    background-image: linear-gradient(to left, rgb(182, 28, 202), rgb(120, 0, 189));
+    background-image: linear-gradient(to left, var(--myViolet), rgb(120, 0, 189));
 }
 
 
@@ -76,16 +77,17 @@ body{
 .LogoBG{
     display: flex;
     float: left;
-    max-width: 414px;
+    max-width: 514px;
     padding-top: 300px;
     padding-left: 100px;
 }
 
 .LogoBGR{
     float: right;
-    max-width: 414px;
+    max-width: 514px;
     padding-top: 300px;
     padding-right: 100px;
+    flex: 1;
 }
 
 .BGText{
@@ -100,39 +102,55 @@ body{
     float: right;
     font-size: 30px;
     padding-top: 390px;
+    padding-right: 50px;
     width: 50%;
 }
-
+@media (max-width: 1244px) {
+    .BGTextR{
+        padding-right: 0px;
+    }
+}
+@media (max-width: 1236px) {
+    .BGTextR{
+        padding-right: 0px;
+        padding-top: 0px;
+    }
+}
 @media (max-width: 768px) {
     .RatBG{
         height: 700px;
     }
     .LogoBG{
-        max-width: 274px;
+        max-width: 174px;
         padding-top: 100px;
-        float: none;
+        float: right;
         display: initial;
+        max-width: 100%;
     }
 
     .LogoBGR{
-        max-width: 274px;
+        max-width: 100%;
         padding-top: 100px;
-        float:none;
+        padding-right: 0px;
+        float: right;
+        display: block;
     }
 
     .BGText{
+        float: none;
         display:block;
-        font-size: 30px;
+        font-size: 20px;
         padding-top: 50px;
         margin-top: 50px;
         display: initial;
     }
 
     .BGTextR{
+        float: none;
         display:block;
-        font-size: 30px;
+        font-size: 20px;
         padding-top: 50px;
-        margin-top: 50px;
+        margin-top: 150px;
         display: initial;
     }
 }
@@ -143,6 +161,105 @@ body{
 
 .name{
     max-width: 100%;
+}
+
+.other{
+    min-height: 400px;
+    background-image: linear-gradient(rgb(0, 0, 0), rgb(26, 37, 43));
+    display: flex; /* Establece flexbox */
+    align-items: center; /* Centra verticalmente la lista */
+    justify-content: center;
+    padding: 50px 50px
+}
+
+.art{
+    min-height: 400px;
+    background-image: linear-gradient(rgb(0, 0, 0), rgb(22, 37, 8));
+    display: flex; /* Establece flexbox */
+    align-items: center; /* Centra verticalmente la lista */
+    justify-content: center;
+    padding: 50px 50px
+}
+
+footer{
+    margin-top: 120px;
+    min-height: 200px;
+    margin-bottom: 120px;
+    fill: var(--myViolet)
+}
+
+/* Estilo para el contenedor de la lista */
+.list-container {
+    display: flex; /* Utiliza flexbox para una disposición horizontal */
+    gap: 50px; /* Espaciado entre los elementos de la lista */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan a la siguiente línea */
+  }
+  
+  /* Estilos para cada elemento de la lista */
+  .list-item {
+    max-width: 580px; /* Ajusta el ancho de cada elemento de la lista según tus necesidades */
+    text-align: center; /* Centra el texto debajo de la imagen */
+  }
+  
+  /* Estilos para la imagen */
+  .list-item img {
+    display: block; /* Hace que la imagen sea un bloque para que ocupe todo el ancho del contenedor */
+    height: 325px; /* Ajusta la altura de la imagen según tus necesidades */
+    max-width: 100%; /* Hace que la imagen ocupe todo el ancho del elemento */
+    object-fit: cover;
+    border: 3px solid var(--borde);
+    box-shadow: 0px 0px 10px var(--borde);
+    border-radius: 5%;
+  }
+  .list-item-art {
+    max-width: 400px; /* Ajusta el ancho de cada elemento de la lista según tus necesidades */
+    text-align: center; /* Centra el texto debajo de la imagen */
+  }
+  .list-item-art img{
+    display: block; /* Hace que la imagen sea un bloque para que ocupe todo el ancho del contenedor */
+    height: 325px; /* Ajusta la altura de la imagen según tus necesidades */
+    max-width: 100%; /* Hace que la imagen ocupe todo el ancho del elemento */
+    object-fit: cover;
+    border: 3px solid var(--bordeV);
+    box-shadow: 0px 0px 10px var(--bordeV);
+    border-radius: 5%;
+  }
+  
+  /* Estilos para el texto */
+  .list-item p {
+    margin-top: 5px; /* Espaciado entre la imagen y el texto */
+  }
+
+.mailContain{
+    display: flex; /* Utiliza flexbox */
+    align-items: center; /* Centra verticalmente los elementos dentro del contenedor */
+    justify-content: center; /* Centra horizontalmente los elementos si se desea */
+    flex-direction: row;
+    gap: 10px; /* Espaciado entre el SVG y el texto */
+    text-shadow: 0px 0px 15px rgb(143, 0, 179);
+
+}
+@media (max-width: 780px) {
+    .container {
+      flex-direction: column; /* Cambia a diseño de columna (SVG arriba, texto abajo) */
+      align-items: center; /* Centra horizontalmente los elementos */
+    }
+  }
+.mail{
+    margin: 0;
+    color: var(--myViolet);
+    display: flex;
+    overflow: hidden;
+}
+  
+
+a {
+    color: var(--myViolet);
+    fill: var(--myViolet);
+  }
+
+a:hover{
+    fill: rgb(155, 20, 173) 
 }
 
 
@@ -159,10 +276,10 @@ body{
    
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: #971fe7; 
+    background: rgb(182, 28, 202)
   }
   
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: #640f9c;
+    background: rgb(155, 20, 173)
   }
