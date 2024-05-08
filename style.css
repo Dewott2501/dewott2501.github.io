@@ -70,6 +70,7 @@ body{
     margin:0px auto;
     background-position: center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
     background-size:     cover; 
     background-image: url("img/ratBG.png");
 }
@@ -78,14 +79,14 @@ body{
     display: flex;
     float: left;
     max-width: 514px;
-    padding-top: 300px;
+    padding-top: 250px;
     padding-left: 100px;
 }
 
 .LogoBGR{
     float: right;
     max-width: 514px;
-    padding-top: 300px;
+    padding-top: 250px;
     padding-right: 100px;
     flex: 1;
 }
@@ -93,7 +94,7 @@ body{
 .BGText{
     display: block;
     font-size: 30px;
-    padding-top: 390px;
+    padding-top: 340px;
     width: 50%;
 }
 
@@ -101,7 +102,7 @@ body{
     display: block;
     float: right;
     font-size: 30px;
-    padding-top: 390px;
+    padding-top: 340px;
     padding-right: 50px;
     width: 50%;
 }
@@ -261,7 +262,7 @@ a {
 
 a:hover{
     fill: rgb(114, 9, 128);
-    color: rgb(114, 9, 128);
+    color
     transition: .4s
 }
 
