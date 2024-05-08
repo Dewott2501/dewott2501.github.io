@@ -15,6 +15,7 @@ var allTexts = ["Desarrollador de Videojuegos",
                 "Arte",
                 "Arte promocional de Moon Rat",
                 "Contactame",
+                "Página hecha con MIS PROPIAS MANOS sin frameworks 💪 (bobada) - Dewottdev 2024"
             ]
 
 const urlParams = new URLSearchParams(window.location.search);
