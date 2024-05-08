@@ -20,7 +20,7 @@ var allTexts = ["Desarrollador de Videojuegos",
 const urlParams = new URLSearchParams(window.location.search);
 console.log(urlParams.get('lang'))
 
-if(urlParams.get('lang') == "true"){
+if(urlParams.get('lang') != null && urlParams.get('lang') == "true"){
 for(let i = 0; i < allTexts.length; i++){
     document.getElementById(i.toString()).innerHTML = allTexts[i]
     if(i == 2) document.getElementById(i.toString()).href =  "index.html?lang=false"
