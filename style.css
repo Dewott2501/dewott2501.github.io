@@ -262,7 +262,7 @@ a {
 
 a:hover{
     fill: rgb(114, 9, 128);
-    color
+    color: rgb(114, 9, 128);
     transition: .4s
 }
 
