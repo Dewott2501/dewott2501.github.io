@@ -61,6 +61,32 @@ body{
     background-image: linear-gradient(to left, var(--myViolet), rgb(120, 0, 189));
 }
 
+@keyframes roticon {
+  0%, 100% {
+    rotate: 0;
+  }
+  10% {
+    rotate: 20deg;
+  }
+  50% {
+    rotate: -20deg;
+  }
+}
+
+@keyframes move-words {
+    0%, 100% {
+      bottom: 10px;
+    }
+    50% {
+      bottom: 0px;
+    }
+  }
+
+.move {
+    position: relative;
+    animation: move-words 2s ease-in-out infinite;
+    margin: 0;
+  }
 
 .RatBG{
     width: 100%;
@@ -167,6 +193,7 @@ body{
 .other{
     min-height: 400px;
     background-image: linear-gradient(rgb(0, 0, 0), rgb(26, 37, 43));
+    background-attachment: fixed;
     display: flex; /* Establece flexbox */
     align-items: center; /* Centra verticalmente la lista */
     justify-content: center;
@@ -175,7 +202,8 @@ body{
 
 .art{
     min-height: 400px;
-    background-image: linear-gradient(rgb(0, 0, 0), rgb(22, 37, 8));
+    background-image: linear-gradient(rgb(0, 0, 0), rgb(21, 36, 8), rgb(41, 75, 9));
+    background-attachment: fixed;
     display: flex; /* Establece flexbox */
     align-items: center; /* Centra verticalmente la lista */
     justify-content: center;
@@ -257,30 +285,35 @@ footer{
 a {
     color: var(--myViolet);
     fill: var(--myViolet);
-    transition: .4s
+    transition: .4s;
   }
 
 a:hover{
     fill: rgb(114, 9, 128);
     color: rgb(114, 9, 128);
-    transition: .4s
+    transition: .4s;
 }
 
 .gameLink{
     fill: antiquewhite;
-    transition: .4s
+    transition: .4s;
+    position: relative;
+    margin: 0;
 }
 
 .gameLink:hover{
     fill: rgb(133, 133, 133);
-    transition: .4s
+    transition: .4s;
+    animation: roticon 0.5s ease-in-out normal;
 }
+
+
 
 
 
 /* width */
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 12px;
   }
   
   /* Track */
@@ -290,7 +323,9 @@ a:hover{
    
   /* Handle */
   ::-webkit-scrollbar-thumb {
+    border-radius: 8px;
     background: rgb(182, 28, 202)
+    
   }
   
   /* Handle on hover */
