@@ -256,10 +256,23 @@ footer{
 a {
     color: var(--myViolet);
     fill: var(--myViolet);
+    transition: .4s
   }
 
 a:hover{
-    fill: rgb(155, 20, 173) 
+    fill: rgb(114, 9, 128);
+    color: rgb(114, 9, 128);
+    transition: .4s
+}
+
+.gameLink{
+    fill: antiquewhite;
+    transition: .4s
+}
+
+.gameLink:hover{
+    fill: rgb(133, 133, 133);
+    transition: .4s
 }
 
 
