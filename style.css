@@ -33,6 +33,7 @@ body{
 
 .TitleText{
     display: block; 
+    padding-top: 150px;
     color: blueviolet;
     font-family: 'Roboto Black', sans-serif;
     text-shadow: 0px 0px 15px rgb(Black, Black, Black,);
@@ -41,10 +42,37 @@ body{
 }
 
 .subTitle{
-    padding: 50px;  
+    padding: 100px;  
     font-size: 20px;
     text-shadow: 0px 0px 10px rgb(Black, Black, Black,);
     display: block;
+}
+
+.mineText{
+  position: absolute;
+  rotate: -20deg;
+  transform: translateX(200px) translateY(50px);
+  color: yellow;
+  animation: mine .5s ease-in-out normal;
+  animation-iteration-count: infinite;
+}
+
+.mineTextESP{
+  position: absolute;
+  rotate: -20deg;
+  transform: translateX(250px) translateY(60px);
+  color: yellow;
+  animation: mine .5s ease-in-out normal;
+  animation-iteration-count: infinite;
+}
+
+.intro{
+  background-image: url("img/dev.png");
+  background-repeat: no-repeat;
+  background-position: 50%;
+  height: 700px;
+  animation: introBG 5s ease-in-out normal;
+  animation-iteration-count: infinite;
 }
 
 .separator{
@@ -60,6 +88,16 @@ body{
     background-image: linear-gradient(to left, var(--myViolet), rgb(120, 0, 189));
 }
 
+@keyframes mine {
+  0%, 100% {
+    font-size: 14.5px
+  }
+  50% {
+    font-size: 15px
+  }
+}
+
+
 @keyframes roticon {
   0%, 100% {
     rotate: 0;
@@ -69,6 +107,15 @@ body{
   }
   50% {
     rotate: -20deg;
+  }
+}
+
+@keyframes introBG {
+  0%, 100% {
+    background-size: 40%;
+  }
+  50% {
+    background-size: 38%;
   }
 }
 
@@ -186,16 +233,43 @@ body{
     align-items: center;
 }
 
-.name{
-    max-width: 100%;
+header{
+  text-align: left;
 }
+
+.name{
+  width: 15%;
+  margin: 0.5%;
+  padding-left: 2%;
+}
+
+.lilguys{
+  height: 60px;
+  transform: translateY(3.95px);
+}
+
+.flag{
+  width: 40px;
+  margin: 0.7%;
+  position:absolute;
+  right: 20px;
+  top: 5px;
+}
+
+.footerflag{
+  width: 40px;
+  
+  position: relative;
+}
+
+
 
 .other{
     min-height: 400px;
     background-image: linear-gradient(rgb(0, 0, 0), rgb(26, 37, 43));
     background-attachment: fixed;
-    display: flex; /* Establece flexbox */
-    align-items: center; /* Centra verticalmente la lista */
+    display: flex; 
+    align-items: center; 
     justify-content: center;
     padding: 50px 50px
 }
@@ -204,8 +278,8 @@ body{
     min-height: 400px;
     background-image: linear-gradient(rgb(0, 0, 0), rgb(21, 36, 8), rgb(41, 75, 9));
     background-attachment: fixed;
-    display: flex; /* Establece flexbox */
-    align-items: center; /* Centra verticalmente la lista */
+    display: flex; 
+    align-items: center; 
     justify-content: center;
     padding: 50px 50px
 }
@@ -217,61 +291,57 @@ footer{
     fill: var(--myViolet)
 }
 
-/* Estilo para el contenedor de la lista */
 .list-container {
-    display: flex; /* Utiliza flexbox para una disposición horizontal */
-    gap: 50px; /* Espaciado entre los elementos de la lista */
-    flex-wrap: wrap; /* Permite que los elementos se envuelvan a la siguiente línea */
+    display: flex; 
+    gap: 50px; 
+    flex-wrap: wrap; 
   }
   
-  /* Estilos para cada elemento de la lista */
   .list-item {
-    max-width: 580px; /* Ajusta el ancho de cada elemento de la lista según tus necesidades */
-    text-align: center; /* Centra el texto debajo de la imagen */
+    max-width: 580px; 
+    text-align: center; 
   }
   
-  /* Estilos para la imagen */
   .list-item img {
-    display: block; /* Hace que la imagen sea un bloque para que ocupe todo el ancho del contenedor */
-    height: 325px; /* Ajusta la altura de la imagen según tus necesidades */
-    max-width: 100%; /* Hace que la imagen ocupe todo el ancho del elemento */
+    display: block; 
+    height: 325px; 
+    max-width: 100%; 
     object-fit: cover;
     border: 3px solid var(--borde);
     box-shadow: 0px 0px 10px var(--borde);
     border-radius: 5%;
   }
   .list-item-art {
-    max-width: 400px; /* Ajusta el ancho de cada elemento de la lista según tus necesidades */
-    text-align: center; /* Centra el texto debajo de la imagen */
+    max-width: 400px; 
+    text-align: center; 
   }
   .list-item-art img{
-    display: block; /* Hace que la imagen sea un bloque para que ocupe todo el ancho del contenedor */
-    height: 325px; /* Ajusta la altura de la imagen según tus necesidades */
-    max-width: 100%; /* Hace que la imagen ocupe todo el ancho del elemento */
+    display: block; 
+    height: 325px; 
+    max-width: 100%; 
     object-fit: cover;
     border: 3px solid var(--bordeV);
     box-shadow: 0px 0px 10px var(--bordeV);
     border-radius: 5%;
   }
   
-  /* Estilos para el texto */
   .list-item p {
-    margin-top: 5px; /* Espaciado entre la imagen y el texto */
+    margin-top: 5px; 
   }
 
 .mailContain{
-    display: flex; /* Utiliza flexbox */
-    align-items: center; /* Centra verticalmente los elementos dentro del contenedor */
-    justify-content: center; /* Centra horizontalmente los elementos si se desea */
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
     flex-direction: row;
-    gap: 10px; /* Espaciado entre el SVG y el texto */
+    gap: 10px; 
     text-shadow: 0px 0px 15px rgb(143, 0, 179);
 
 }
 @media (max-width: 780px) {
     .container {
-      flex-direction: column; /* Cambia a diseño de columna (SVG arriba, texto abajo) */
-      align-items: center; /* Centra horizontalmente los elementos */
+      flex-direction: column; 
+      align-items: center; 
     }
   }
 .mail{
