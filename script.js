@@ -22,6 +22,7 @@ var allTexts = ["DewottDev - Desarrollador Indie",
 const urlParams = new URLSearchParams(window.location.search);
 console.log(urlParams.get('lang'))
 
+
 if(urlParams.get('lang') != null && urlParams.get('lang') == "true"){
 for(let i = 0; i < allTexts.length; i++){
 

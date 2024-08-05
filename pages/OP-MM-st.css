@@ -1,5 +1,8 @@
 :root{
     cursor: url('../img/OP/mouse.png'), auto;
+    --posLeft: -26.5px;
+    --posRight: 4.5px;
+    --red: rgb(189, 0, 0);
 }
 
 body{
@@ -9,6 +12,7 @@ body{
     overflow-x: hidden;
     margin: 0;
     text-align: center;
+    font-family: 'Roboto Semibold', sans-serif;
 }
 
 header{
@@ -53,7 +57,43 @@ header{
     filter: drop-shadow(5px 5px 10px #0000009e);
     margin-top: 150px;
     margin-bottom: 150px;
-    animation: show-logo 0.5s ease-out;
+    animation: show-logo 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.engine-text{
+    position: absolute;
+    right: 100px;
+    top: 125px; 
+    max-width: 80px;
+    margin-bottom: 0px;
+    opacity: 0%;
+    transition: .4s; 
+}
+.engine{
+    position: absolute;
+    right: 30px;
+    top: 100px; 
+    max-width: 80px;
+    margin-bottom: 0px;
+    opacity: 50%;
+    transition: .4s;
+}
+
+.engine-cont:hover .engine{
+    transition: .4s;
+    max-width: 90px;
+    opacity: 100%;
+    right: 25px;
+    top: 95px; 
+}
+
+.engine-cont:hover .engine-text{
+    position: absolute;
+    right: 130px;
+    top: 125px; 
+    max-width: 80px;
+    margin-bottom: 0px;
+    transition: 0.4;
+    opacity: 100%;
 }
 
 .bg{
@@ -94,7 +134,7 @@ header{
     color: red;
     font-size: 50px;
     background-color: #000000;
-    box-shadow: 0px 0px 15px #ff0000;
+    
     text-shadow: 1px 1px 15px #ff0000;
 }
 
@@ -117,23 +157,119 @@ header{
     1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000;
 }
 
+.blackbox{
+    background-color: #000000d2;
+    max-width: 500px;
+    align-items: inherit;
+    justify-content: center;
+    text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000, 1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000;
+    border-radius: 5px;
+    box-sizing: border-box;
+    border: 5px solid red;
+    border-radius: 5px;
+    box-shadow: 0px 0px 15px #ff0000;
+    color: red;
+    margin: 50px;
+}
+
+#bf{
+    width: 25px;
+    height: 30px;
+    transform: scale(4) translate(-26.5px, 30.5px);
+    image-rendering:pixelated;
+    animation: bfWalk 6s linear normal;
+    animation-iteration-count: infinite;
+}
+
+#path{
+    background-color: transparent;
+    background-image: url("../img/OP/world.png");
+    transform: scale(4) translate(2.6px, 41px);
+    image-rendering:pixelated;
+    width: 71px;
+    height: 42px;
+    text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000, 1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000;
+
+}
+
+.videoc{
+    box-sizing: border-box;
+    border: 5px solid red;
+    border-radius: 5px;
+    box-shadow: 0px 0px 15px #ff0000;
+    max-width: 100%;
+    object-fit:cover
+
+}
+
+.downloadBG{
+    background-image: url("https://images.gamebanana.com/img/ss/mods/530-90_6585d6ce8827f.jpg");
+
+    height: 500px;
+}
+
+footer{
+    padding-top: 120px;
+    min-height: 200px;
+    padding-bottom: 80px;
+    fill: var(--red);
+    color: var(--red);
+    background-color: black
+}
+
+.mail{
+    margin: 0;
+    color: var(--red);
+    display: flex;
+    overflow: hidden;
+}
+
+.mailContain{
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    flex-direction: row;
+    gap: 10px; 
+    text-shadow: 0px 0px 15px rgb(179, 0, 0);
+
+}
+
+.footerflag{
+    width: 40px;
+    
+    position: relative;
+  }
+
+a {
+    color: var(--red);
+    fill: var(--red);
+    transition: .4s;
+  }
+
+a:hover{
+    fill: rgb(134, 21, 21);
+    color: rgb(134, 21, 21);
+    transition: .4s;
+}
+
+.end{
+    color: rgb(114, 113, 110);
+}
+
 ::-webkit-scrollbar {
     width: 12px;
   }
   
-  /* Track */
   ::-webkit-scrollbar-track {
     background: #000000; 
   }
    
-  /* Handle */
   ::-webkit-scrollbar-thumb {
     border-radius: 8px;
     background: rgb(202, 28, 28)
     
   }
   
-  /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
     background: rgb(173, 20, 20)
   }
@@ -146,5 +282,39 @@ header{
     100% {
         opacity: 1;
         transform: scale(1);
+    }
+  }
+
+  @keyframes bfWalk {
+    0%{
+        transform: scale(4) translate(var(--posLeft), 30.5px);
+        background-image: url("../img/OP/idle.gif");
+    }
+    25% {
+        transform: scale(4) translate(var(--posLeft), 30.5px);
+        background-image: url("../img/OP/idle.gif");
+    }
+    25.01%{
+        transform: scale(4) translate(var(--posLeft), 30.5px) scaleX(-1);
+        background-image: url("../img/OP/move.gif");
+    }
+    50% {
+        transform: scale(4) translate(var(--posRight), 30.5px) scaleX(-1);
+        background-image: url("../img/OP/move.gif");
+    }
+    50.01%{
+        background-image: url("../img/OP/idle.gif");
+        transform: scale(4) translate(var(--posRight), 30.5px) scaleX(1);
+    }
+    75% {
+        transform: scale(4) translate(var(--posRight), 30.5px);
+        background-image: url("../img/OP/idle.gif");
+    }
+    75.01%{
+        background-image: url("../img/OP/move.gif");
+    }
+    100% {
+        transform: scale(4) translate(var(--posLeft), 30.5px);
+        background-image: url("../img/OP/move.gif");
     }
   }
